@@ -1,0 +1,32 @@
+
+	.ts-footer {
+		background-color: #000;
+		color: #fff;
+		padding: 110px 0;
+		.h4 {
+			margin-bottom: 1.5rem;
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+		.navbar-nav {
+			-ms-flex-direction: row;
+			flex-direction: row;
+			.separator {
+				margin-top: 3px;
+				height: 16px;
+			}
+		}
+		.block {
+			margin: 15px 0;
+			.l-info, .r-info {
+				display: inline-block;
+				width: 115px;
+			}
+			.r-info {
+				text-align: right;
+			}
+		}
+		a {
+			font-size: 16px;
+		}
+	}

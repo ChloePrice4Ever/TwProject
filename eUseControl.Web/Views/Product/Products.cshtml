@@ -1,0 +1,45 @@
+﻿@using System.Web.Optimization
+@model eUseControl.Web.Models.MProducts
+@{ ViewBag.Title = "Produse";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+@section PageStyle {
+    @Styles.Render("~/bundles/products/css")
+}
+
+@section PageScript {
+    @Scripts.Render("~/bundles/products/js")
+}
+        <div style="margin-bottom:50px">
+            <div style="margin-top:150px" class="content">
+
+                <!-- Start Content-->
+                <div class="container-fluid">
+                    <div class="row filterable-content">
+                       
+       @foreach (var item in Model.Products)
+                {
+        <div class="col-sm-6 col-xl-3 filter-item all web illustrator">
+            <div class="gal-box">
+               
+                    <a href="@Url.Content(item.ImagePath)" class="image-popup" title="Screenshot-1">
+                        <h4 style="text-align:center" class="font-16 mt-0">@item.Category</h4>
+                        <img src="@Url.Content(item.ImagePath)" class="img-fluid" alt="work-thumbnail">
+                    </a>
+                    <div class="gall-info">
+                        <a href="javascript: void(0);">
+                            <img src="@Url.Content(item.ImagePath)" alt="user-img" class="rounded-circle" height="24" />
+                            <span class="text-muted ml-1">@item.Name</span>
+                            <span class="text-muted ml-1">........................................................ @item.Price$</span>
+                        </a>
+                    </div> <!-- gallery info -->
+                </div> <!-- end gal-box -->
+            
+            </div> <!-- end col -->}
+        </div>
+                    <!-- end row -->
+
+                </div> <!-- container -->
+
+            </div> <!-- content -->
+        </div>

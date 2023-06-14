@@ -1,0 +1,91 @@
+.tanysher-container {
+	.carousel {
+		top: 0;
+		left: 0;
+		z-index: 0;
+		@media only screen and (max-width: 992px){
+			margin-top: 57px;
+		}
+		.carousel-item {
+			.view {
+				height: 470px;
+				.w-100 {
+					background-position: center;
+					background-repeat: no-repeat;
+					background-size: cover;
+					position: relative;
+					height: 470px;
+				}
+				.mask {
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					overflow: hidden;
+					background-attachment: fixed;
+					&.rgba {
+						background-color: rgba(0,0,0,0.7);
+					}
+				}
+			}
+		}
+	}
+	.ts-banners {
+		.row {
+			margin: 0;
+			.banner {
+				height: 450px;
+				&.black {
+					background-color: #000;
+					a {
+						color: #fff;
+					}
+				}
+				&.white {
+					background-color: #fff;
+					a {
+						color: #000;
+					}
+				}
+				a {
+					display: flex;
+					height: 100%;
+					justify-content: center;
+					align-items: center;
+				}
+				.ts-card {
+					text-align: center;
+					.card-line {
+						font-family: Pacifico, sans-serif;
+						font-size: 4rem;
+						color: #c59d5f;
+						line-height: 2em;
+					}
+					.card-title {
+						font-weight: 700;
+						letter-spacing: .025em;
+						text-transform: uppercase;
+					}
+					.card-subtitle {
+						font-size: 12px;
+						font-weight: 500;
+						letter-spacing: .25em;
+						line-height: 1.33em;
+						text-transform: uppercase;
+					}
+					.more {
+						letter-spacing: .25em;
+						font-weight: 700;
+						text-transform: uppercase;
+						margin-top: 40px;
+						color: #c59d5f;
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+}

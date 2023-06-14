@@ -1,0 +1,104 @@
+.tanysher-container .carousel {
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+@media only screen and (max-width: 992px) {
+    .tanysher-container .carousel {
+        margin-top: 57px;
+    }
+}
+
+.tanysher-container .carousel .carousel-item .view {
+    height: 470px;
+}
+
+    .tanysher-container .carousel .carousel-item .view .w-100 {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        height: 470px;
+    }
+
+    .tanysher-container .carousel .carousel-item .view .mask {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-attachment: fixed;
+    }
+
+        .tanysher-container .carousel .carousel-item .view .mask.rgba {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+.tanysher-container .ts-banners .row {
+    margin: 0;
+}
+
+    .tanysher-container .ts-banners .row .banner {
+        height: 450px;
+    }
+
+        .tanysher-container .ts-banners .row .banner.black {
+            background-color: #000;
+        }
+
+            .tanysher-container .ts-banners .row .banner.black a {
+                color: #fff;
+            }
+
+        .tanysher-container .ts-banners .row .banner.white {
+            background-color: #fff;
+        }
+
+            .tanysher-container .ts-banners .row .banner.white a {
+                color: #000;
+            }
+
+        .tanysher-container .ts-banners .row .banner a {
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tanysher-container .ts-banners .row .banner .ts-card {
+            text-align: center;
+        }
+
+            .tanysher-container .ts-banners .row .banner .ts-card .card-line {
+                font-family: Pacifico, sans-serif;
+                font-size: 4rem;
+                color: #c59d5f;
+                line-height: 2em;
+            }
+
+            .tanysher-container .ts-banners .row .banner .ts-card .card-title {
+                font-weight: 700;
+                letter-spacing: 0.025em;
+                text-transform: uppercase;
+            }
+
+            .tanysher-container .ts-banners .row .banner .ts-card .card-subtitle {
+                font-size: 12px;
+                font-weight: 500;
+                letter-spacing: 0.25em;
+                line-height: 1.33em;
+                text-transform: uppercase;
+            }
+
+            .tanysher-container .ts-banners .row .banner .ts-card .more {
+                letter-spacing: 0.25em;
+                font-weight: 700;
+                text-transform: uppercase;
+                margin-top: 40px;
+                color: #c59d5f;
+                font-size: 14px;
+            }

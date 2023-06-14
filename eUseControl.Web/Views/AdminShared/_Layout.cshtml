@@ -1,0 +1,43 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title | Admin | TanySher</title>
+
+    @if (IsSectionDefined("PageStyle"))
+    {
+       @RenderSection("PageStyle");
+     }
+
+    @Styles.Render("~/bundles/app/css")
+
+</head>
+<body>
+    <!-- Begin page -->
+    <div id="wrapper">
+
+        @Html.Partial("~/Views/AdminShared/_Header.cshtml")
+        @Html.Partial("~/Views/AdminShared/_LeftSidebar.cshtml")
+
+        <div class="content-page">
+
+            @RenderBody()
+            @Html.Partial("~/Views/AdminShared/_Footer.cshtml")
+
+        </div>
+    </div>
+    <!-- END wrapper -->
+    @Html.Partial("~/Views/AdminShared/_RightSidebar.cshtml")
+
+    @Scripts.Render("~/bundles/vendor/js")
+
+    @if (IsSectionDefined("PageScript"))
+    {
+         @RenderSection("PageScript");
+    }
+
+    @Scripts.Render("~/bundles/app/js")
+</body>
+</html>

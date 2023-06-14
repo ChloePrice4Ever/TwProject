@@ -1,0 +1,38 @@
+.ts-footer {
+    background-color: #000;
+    color: #fff;
+    padding: 110px 0;
+}
+
+    .ts-footer .h4 {
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .ts-footer .navbar-nav {
+        -ms-flex-direction: row;
+        flex-direction: row;
+    }
+
+        .ts-footer .navbar-nav .separator {
+            margin-top: 3px;
+            height: 16px;
+        }
+
+    .ts-footer .block {
+        margin: 15px 0;
+    }
+
+        .ts-footer .block .l-info, .ts-footer .block .r-info {
+            display: inline-block;
+            width: 115px;
+        }
+
+        .ts-footer .block .r-info {
+            text-align: right;
+        }
+
+    .ts-footer a {
+        font-size: 16px;
+    }

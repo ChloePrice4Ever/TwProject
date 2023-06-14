@@ -1,0 +1,102 @@
+﻿@using System.Web.Optimization
+@model eUseControl.Web.Models.UserRegister
+@{ ViewBag.Title = "Register";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
+<div style="margin-top:200px">
+    <div class="account-pages pb-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6 col-xl-5">
+                    <div class="card">
+
+                        <div class="card-body p-4">
+
+                            <div class="text-center w-75 m-auto">
+
+                                <p class="text-muted mb-4 mt-3">Create account </p>
+                            </div>
+                            <script>
+                                function onSuccess() {
+                                    alert("Inregistrare cu succes");
+                                }
+                                function onFailure() {
+                                    alert("Inregistrarea a eșuat");
+                                }</script>
+
+                            @using (Ajax.BeginForm("Index", "Register", null, new AjaxOptions
+                            {
+                                HttpMethod = "POST",
+                                UpdateTargetId = "register-form",
+                                OnSuccess = "onSuccess",
+                                OnFailure = "onFailure"
+                            }, new { id = "register-form" }))
+                            {
+                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true)
+                                                <div class="form-group">
+                                                    @Html.LabelFor(x => x.Name)
+                                                    @Html.TextBoxFor(x => x.Name, new
+                                                    {
+                                                        @class = "form-control",
+                                                        placeholder = "Firts Name",
+                                                        id = "",
+                                                        name = "name"
+                                                    })
+                                                    @Html.ValidationMessageFor(x => x.Name)
+                                                </div>
+                                                                <div class="form-group">
+                                                                    @Html.LabelFor(x => x.Surname)
+                                                                    @Html.TextBoxFor(x => x.Surname, new
+                                                                    {
+                                                                        @class = "form-control",
+                                                                        placeholder = "Second Name",
+                                                                        id = "",
+                                                                        name = "surname"
+                                                                    })
+                                                                    @Html.ValidationMessageFor(x => x.Surname)
+                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    @Html.LabelFor(x => x.Email)
+                                                                                    @Html.TextBoxFor(x => x.Email, new
+                                                                                    {
+                                                                                        @class = "form-control",
+                                                                                        placeholder = "Email",
+                                                                                        id = "",
+                                                                                        name = "email"
+                                                                                    })
+                                                                                </div>
+                                                                                                <div class="form-group">
+                                                                                                    @Html.LabelFor(x => x.Password)
+                                                                                                    @Html.TextBoxFor(x => x.Password, new
+                                                                                                    {
+                                                                                                        @class = "form-control",
+                                                                                                        placeholder = "Password",
+                                                                                                        id = "",
+                                                                                                        name = "password"
+                                                                                                    })
+                                                                                                </div>
+                                                                                                                <p></p>
+                                                                                                                                <div class="form-group mb-0 text-center">
+                                                                                                                                    <button class="btn btn-primary btn-block" type="submit"> Register </button>
+                                                                                                                                </div>}
+
+
+                        </div> <!-- end card-body -->
+                    </div>
+                    <!-- end card -->
+
+                    <div class="row mt-3">
+                        <div class="col-12 text-center">
+                            <p class="text-muted">Already have an account?  <a href="@Url.Action("Index", "Login")" class="text-muted font-weight-medium ml-1">Login</a></p>
+                        </div> <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                </div> <!-- end col -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </div>
+    <!-- end page -->
+</div>

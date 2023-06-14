@@ -1,0 +1,79 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+
+    <link href="~/assets/img/favicon.png" rel="icon">
+    <link href="assets/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <title>Spotlight</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+
+    @if (IsSectionDefined("PageStyle"))
+    {
+        @RenderSection("PageStyle");
+    }
+
+    @Styles.Render("~/bundles/animation.min/css")
+    @Styles.Render("~/bundless/aos/css")
+    @Styles.Render("~/bundles/bootstrap.min/css")
+    @Styles.Render("~/bundles/bootstrap-icons/css")
+    @Styles.Render("~/bundles/boxicons.min/css")
+    @Styles.Render("~/bundles/glightbox.min/css")
+    @Styles.Render("~/bundles/swiper-bundle.min/css")
+    @Styles.Render("~/bundles/main/css")
+    @Styles.Render("~/bundles/app/css")
+    @Styles.Render("~/bundles/footer/css")
+
+    @Styles.Render("~/bundles/style/css")
+
+</head>
+<body>
+
+    <!-- ======= Top Bar ======= -->
+    <div class="d-flex align-items-center fixed-top" id="topbar">
+        @Html.Partial("_TopBar")
+    </div>
+
+    <!-- ======= Header ======= -->
+    <header class="fixed-top d-flex align-items-cente" id="header">
+        @Html.Partial("_Header")
+    </header>
+
+    <main id="main">
+        @RenderBody()
+    </main>
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        @Html.Partial("_Footer")
+    </footer>
+
+    @Scripts.Render("~/bundles/aos/js")
+    @Scripts.Render("~/bundles/bootstrap.bundle.min/js")
+    @Scripts.Render("~/bundles/glightbox.min/js")
+    @Scripts.Render("~/bundles/isotope.pkgd.min/js")
+    @Scripts.Render("~/bundles/swiper-bundle.min/js")
+    @Scripts.Render("~/bundles/validate/js")
+    @Scripts.Render("~/bundles/main/js")
+
+    @RenderSection("scripts", required: false)
+
+    @Scripts.Render("~/bundles/vendor/js")
+
+    @if (IsSectionDefined("PageScript"))
+    {
+        @RenderSection("PageScript");
+    }
+
+    @Scripts.Render("~/bundles/app/js")
+
+</body>
+</html>

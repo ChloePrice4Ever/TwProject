@@ -1,0 +1,96 @@
+﻿@using System.Web.Optimization
+@model eUseControl.Web.Models.MProducts
+@{ ViewBag.Title = "Lista produselor";
+                Layout = "~/Views/AdminShared/_Layout.cshtml"; }
+
+@section PageStyle {
+    @Styles.Render("~/bundles/footable/css")
+}
+
+@section PageScript {
+    @Scripts.Render("~/bundles/footable/js")
+}
+
+<!-- Footable css -->
+<div class="content">
+
+    <!-- Start Content-->
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box">
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Spotlight</a></li>
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
+                            <li class="breadcrumb-item active">Products</li>
+                        </ol>
+                    </div>
+                    <h4 class="page-title">Products</h4>
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card-box">
+                    <h4 class="header-title">Products</h4>
+                    <p class="sub-header">
+                        Adauga produse.
+                    </p>
+
+                    <div class="mb-2">
+                        <div class="row">
+                            <div class="col-12 text-sm-center form-inline">
+                                <div class="form-group mr-2">
+                                    <a href="@Url.Action("Add","Product")" class="btn btn-primary"><i class="mdi mdi-plus-circle mr-2"></i>Add products</a>
+                                </div>
+                                <div class="form-group">
+                                    <input id="demo-input-search2" type="text" placeholder="Search" class="form-control" autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <table id="demo-foo-addrow" class="table table-centered table-striped mb-0" data-page-size="7">
+                        <thead>
+                            <tr>
+                                <th data-sort-initial="true">Id</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Categories</th>
+                                <th>Img</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Products)
+                            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Price</td>
+                    <td>@item.Category</td>
+                    <td><img height="60px" src="@Url.Content(@item.ImagePath)" alt="@item.Name"/></td>
+                </tr>}
+                        </tbody>
+                        <tfoot>
+                            <tr class="active">
+                                <td colspan="6">
+                                    <div class="text-right">
+                                        <ul class="pagination pagination-split justify-content-end footable-pagination m-t-10"></ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div> <!-- end card-box -->
+            </div> <!-- end col -->
+        </div>
+        <!-- end row -->
+
+    </div> <!-- container -->
+
+</div> <!-- content -->

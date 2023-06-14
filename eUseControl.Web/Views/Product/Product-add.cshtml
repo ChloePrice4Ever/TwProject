@@ -1,0 +1,146 @@
+﻿@using System.Web.Optimization
+@model eUseControl.Web.Models.MProduct
+@{ ViewBag.Title = "Adauga produs";
+                Layout = "~/Views/AdminShared/_Layout.cshtml"; }
+
+@section PageStyle {
+    @Styles.Render("~/bundles/product/css")
+}
+
+@section PageScript {
+    @Scripts.Render("~/bundles/product/js")
+}
+
+<div class="content">
+
+    <!-- Start Content-->
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box">
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Spotlight</a></li>
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Products</a></li>
+                            <li class="breadcrumb-item active">Editeaza produs</li>
+                        </ol>
+                    </div>
+                    <h4 class="page-title">Adauga produs</h4>
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="header-title">Completati formularul</h4>
+                        @using (Ajax.BeginForm("Add", "Product", null, new AjaxOptions
+                        {
+                            HttpMethod = "POST",
+                            UpdateTargetId = "edit-form",
+                            OnSuccess = "onSuccess",
+                            OnFailure = "onFailure"
+                        }, new
+                        {
+                            id = "myAwesomeDropzone",
+                            @class = "needs-validation",
+                            enctype = "multipart/form-data"
+                        }))
+                        {
+            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true)
+                                            <div class="form-group mb-3">
+                                                @Html.LabelFor(x => x.Name)<span class="text-danger">*</span>
+                                                @Html.TextBoxFor(x => x.Name, new
+                                                {
+                                                    @class = "form-control",
+                                                    placeholder = "Name",
+                                                    id = "validationCustom01",
+                                                    name = "name"
+                                                })
+                                                @Html.ValidationMessageFor(x => x.Name, "", new { @class = "invalid-feedback" })
+                                            </div>
+                                                            <div class="form-group mb-3">
+                                                                @Html.LabelFor(x => x.Price)<span class="text-danger">*</span>
+                                                                @Html.TextBoxFor(x => x.Price, new
+                                                                {
+                                                                    @class = "form-control",
+                                                                    placeholder = "Price",
+                                                                    id = "validationCustom02",
+                                                                    name = "price",
+                                                                    type = "number"
+                                                                })
+                                                                @Html.ValidationMessageFor(x => x.Price, "", new { @class = "invalid-feedback" })
+                                                            </div>
+                                                                            <div class="form-group mb-3">
+                                                                                @Html.LabelFor(x => x.Category)<span class="text-danger">*</span>
+                                                                                @Html.DropDownListFor(x => x.Category, new List<SelectListItem> {
+                           new SelectListItem {Text = "Dishes", Value = "Dishes"},
+                           new SelectListItem {Text = "Deserts", Value = "Deserts"},
+                           new SelectListItem {Text = "Drinks", Value = "Drinks"},
+                           }, new
+                                                                                           {
+                                                                                               @class = "selectpicker show-tick form-control",
+                                                                                               placeholder = "Categories",
+                                                                                               id = "validationCustom03",
+                                                                                               name = "category",
+                                                                                               data_style = "btn-light"
+                                                                                           })
+                                                                                @Html.ValidationMessageFor(x => x.Category, "", new { @class = "invalid-feedback" })
+                                                                            </div>
+                                                                                            <div class="form-group mb-3">
+                                                                                                @Html.LabelFor(x => x.Image)<span class="text-danger">*</span>
+                                                                                                <div class="fallback">
+                                                                                                    @Html.TextBoxFor(x => x.Image, new
+                                                                                                    {
+                                                                                                        @class = "form-control",
+                                                                                                        placeholder = "Price",
+                                                                                                        id = "validationCustom05",
+                                                                                                        name = "Image",
+                                                                                                        type = "file"
+                                                                                                    })
+                                                                                                </div>
+                                                                                            </div>
+                                                                                                            <div class="form-group text-right mb-0">
+                                                                                                                <button class="btn btn-primary waves-effect waves-light mr-1" type="submit">
+                                                                                                                    Submit
+                                                                                                                </button>
+                                                                                                                <button type="reset" class="btn btn-secondary waves-effect waves-light">
+                                                                                                                    Cancel
+                                                                                                                </button>
+                                                                                                            </div>}
+
+                    </div> <!-- end card-body-->
+                </div> <!-- end card-->
+            </div> <!-- end col-->
+        </div>
+        <!-- end row -->
+        <!-- file preview template -->
+        <div class="d-none" id="uploadPreviewTemplate">
+            <div class="card mt-1 mb-0 shadow-none border">
+                <div class="p-2">
+                    <div class="row align-items-center">
+                        <div class="col-auto">
+                            <img data-dz-thumbnail class="avatar-sm rounded bg-light" alt="">
+                        </div>
+                        <div class="col pl-0">
+                            <a href="javascript:void(0);" class="text-muted font-weight-bold" data-dz-name></a>
+                            <p class="mb-0" data-dz-size></p>
+                        </div>
+                        <div class="col-auto">
+                            <!-- Button -->
+                            <a href="" class="btn btn-link btn-lg text-muted" data-dz-remove>
+                                <i class="mdi mdi-close-circle"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- container -->
+
+</div> <!-- content -->

@@ -1,0 +1,34 @@
+
+.tanysher-container .account-pages {
+ padding-top 100px;
+  padding-top: 120px;
+  background-color: #323b44;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #a8b5c3;
+}
+.tanysher-container .account-pages .card {
+  border: 1px solid #36404a;
+  border-radius: 0.25rem;
+  background-color: #36404a;
+}
+.tanysher-container .account-pages .form-control {
+  font-size: 0.9rem;
+  background-color: #414d59;
+  border: 1px solid #495561;
+}
+.tanysher-container .account-pages .form-control:focus {
+  color: #fff;
+  background-color: #495561;
+  border-color: #546270;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.tanysher-container .account-pages .text-dark {
+  color: #8a929a !important;
+}
+.tanysher-container .account-pages .text-dark:hover {
+  color: #646c74 !important;
+}
